@@ -1,0 +1,33 @@
+<p>servers works!</p>
+<label for="">Server Name</label>
+<input type="text" class="form-control" (input)="updateServerName($event)">
+<input type="text" class="form-control"  [(ngModel)] = "servername">
+<p>{{ servername}}</p>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="serverCreator()">Add server</button>
+<!-- <p [innerText]="allowNewServer"></p> -->
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="servernamedisplay; else noserver">Server was created, name is {{ servername }}</p>
+<ng-template #noserver>
+<p>No server was created</p>
+</ng-template>
+
+<!---Assignment Solution--->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <ol>
+        <li>she was cool</li>
+        <li>he is a good developer</li>
+        <li>He learns reallyb fast</li>
+        <li>Nice !! doing business with u</li>
+      </ol>
+      <hr>
+      <label for="">Username</label>
+      <input type="text" class="form-control" [(ngModel)]="username">
+      <p>{{ username }}</p>
+      <button class="btn btn-primary" [disabled]="username == ''" (click)="username = ''">Click Me!!</button>
+    </div>
+  </div>
+</div>
+<app-server *ngFor="let serve of servers"></app-server>
+<!-- <app-server></app-server> -->
